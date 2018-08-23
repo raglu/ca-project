@@ -1,10 +1,15 @@
-  FROM ubuntu:latest
+FROM ubuntu:latest
 
-  RUN apt-get update -y
-  RUN apt-get install -y python-pip python-dev build-essential
+RUN apt-get update -y
+RUN apt-get install -y python-pip python-dev build-essential
+RUN apt-get install -y git
 
-  pip install -r requirements.txt
+RUN git clone https://github.com/raglu/ca-project.git
 
-  EXPOSE 5000
+WORKDIR ca-project/
 
-  CMD ["python", "run.py"]
+RUN pip install -r requirements.txt
+
+EXPOSE 5000
+
+CMD ["python", "run.py"]
