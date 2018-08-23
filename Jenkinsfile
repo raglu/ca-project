@@ -15,4 +15,12 @@ node {
 	stage('Publish'){
 		pretestedIntegrationPublisher()
 	}
+	stage('Archive'){
+		archiveArtifacts 'run.py'
+	}
+}
+node {
+	stage{
+		echo 'new stage'
+	}
 }
