@@ -12,7 +12,7 @@ node {
 	stage('Result'){
 		sh 'docker run -i codechan tests.py'
 	}
-	stage('Puplish'){
+	stage('Publish'){
 		pretestedIntegrationPublisher()
 	}
 }
