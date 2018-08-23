@@ -19,8 +19,3 @@ node {
 		archiveArtifacts 'run.py'
 	}
 }
-node {
-	stage{
-		echo 'new stage'
-	}
-}
