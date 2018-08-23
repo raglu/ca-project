@@ -18,7 +18,7 @@ node {
 	stage('Archive'){
 		archiveArtifacts 'run.py'
 	}
-	stage('Pushush image'){
+	stage('Push image'){
 		sh 'docker push codechan'
 	}
 }
