@@ -19,13 +19,6 @@ node {
 		archiveArtifacts 'run.py'
 	}
 	stage('Push image'){
-		when {
-			branch 'master'
-		}
-		steps {
-			withDockerRegistry([ credentialsId: "", url: "" ]) {
-			sh 'docker push codechan'
-			}
-		}
+		sh 'docker push raglu16/codechan:latest' 	
 	}
 }
