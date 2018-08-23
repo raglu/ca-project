@@ -19,7 +19,13 @@ node {
 		archiveArtifacts 'run.py'
 	}
 	stage('Push image'){
-		sh 'docker login --username=raglu16 --password=Rasmus2864'
-		sh 'docker push codechan'
+		when {
+			branch 'master'
+		}
+		steps {
+			withDockerRegistry([ credentialsId: "", url: "" ]) {
+			sh 'docker push codechan'
+			}
+		}
 	}
 }
