@@ -7,10 +7,10 @@ node {
 		url: 'git@github.com:raglu/ca-project.git']]])   
 	}
 	stage('Build'){
-		sh 'docker build -t codechan .'
+		sh 'docker build -t raglu16/codechan .'
 	}
 	stage('Result'){
-		sh 'docker run -i codechan tests.py'
+		sh 'docker run -i raglu16/codechan tests.py'
 	}
 	stage('Publish'){
 		pretestedIntegrationPublisher()
