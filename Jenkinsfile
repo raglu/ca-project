@@ -22,3 +22,8 @@ node {
 		sh 'docker push raglu16/codechan:latest' 	
 	}
 }
+node{
+	stage('newstage'){
+		echo 'this is a stage on a new node'
+	}
+}
